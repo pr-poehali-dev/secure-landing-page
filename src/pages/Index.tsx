@@ -129,6 +129,116 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Online Services */}
+      <section
+        id="services"
+        className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50"
+      >
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4 font-montserrat">
+            Онлайн-сервисы
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Удобные веб-сервисы, которые не собирают ваши данные и работают
+            локально в браузере.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-1">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <CardTitle className="text-2xl font-montserrat">
+                    MagicQR
+                  </CardTitle>
+                  <Badge className="bg-blue-100 text-blue-800">Онлайн</Badge>
+                </div>
+                <CardDescription className="text-base">
+                  Генератор QR-кодов без отправки данных на сервер
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm text-gray-700">
+                      Работает в браузере
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm text-gray-700">
+                      Не собирает данные
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm text-gray-700">
+                      Мгновенная генерация
+                    </span>
+                  </div>
+                </div>
+                <Button className="w-full" asChild>
+                  <a
+                    href="https://magicqr.znaetapps.ru/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon name="ExternalLink" className="mr-2" />
+                    Открыть сервис
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-xl transition-all hover:-translate-y-1">
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <CardTitle className="text-2xl font-montserrat">
+                    MagicAPP
+                  </CardTitle>
+                  <Badge className="bg-blue-100 text-blue-800">Каталог</Badge>
+                </div>
+                <CardDescription className="text-base">
+                  Каталог приложений в RuPlay Market
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm text-gray-700">
+                      Проверенные приложения
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm text-gray-700">
+                      Российский маркет
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Check" size={16} className="text-green-600" />
+                    <span className="text-sm text-gray-700">
+                      Безопасная загрузка
+                    </span>
+                  </div>
+                </div>
+                <Button className="w-full" asChild>
+                  <a
+                    href="https://ruplay.market/developer/vlines"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icon name="ExternalLink" className="mr-2" />
+                    Посмотреть приложения
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Apps Showcase */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
@@ -175,9 +285,19 @@ const Index = () => {
                       </div>
                     ))}
                   </div>
-                  <Button className="w-full">
-                    <Icon name="ExternalLink" className="mr-2" />
-                    Скачать в RuStore
+                  <Button className="w-full" asChild>
+                    <a
+                      href={
+                        app.name === "MagicNotes"
+                          ? "https://ruplay.market/apps/com.vlines.magicnotes"
+                          : "https://ruplay.market/apps/com.vlines.vlpasswords"
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon name="ExternalLink" className="mr-2" />
+                      Скачать в RuPlay Market
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
